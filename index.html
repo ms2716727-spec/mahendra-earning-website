@@ -1,88 +1,134 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101b55">
+<meta name="description" content="Mahendra Earning Hub - Earning apps, games, online tasks and referral information.">
 <title>Mahendra Earning Hub</title>
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f2f5fa;
-  color: #222;
-}
-header {
-  background: #0757c8;
-  color: white;
-  text-align: center;
-  padding: 25px 10px;
-}
-header h1 { margin: 0; }
-.container {
-  padding: 18px;
-  text-align: center;
-}
-.box {
-  background: white;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px #ccc;
-}
-.btn {
-  display: inline-block;
-  background: #087b35;
-  color: white;
-  padding: 12px 22px;
-  text-decoration: none;
-  border-radius: 7px;
-}
-footer {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 18px;
-}
+:root{--navy:#101b55;--blue:#315efb;--purple:#713df4;--bg:#f4f6ff;--ink:#17213b;--muted:#65708a;--line:#e5e9f4;--green:#0b9661}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,"Noto Sans Devanagari",sans-serif;line-height:1.6}a{text-decoration:none;color:inherit}.wrap{width:min(1100px,92%);margin:auto}
+.top{background:#0b123d;color:#e8edff;text-align:center;padding:7px 10px;font-size:13px}
+header{background:linear-gradient(125deg,#101b55,#3924a7 60%,#146bd7);color:white;padding:25px 0 34px}
+.brand{display:flex;align-items:center;gap:13px}.logo{width:55px;height:55px;border-radius:17px;background:white;color:#3924a7;display:grid;place-items:center;font-size:23px;font-weight:900;box-shadow:0 8px 25px #0003}h1{font-size:clamp(25px,5vw,39px);line-height:1.15;margin:0}.tagline{margin:10px 0 0 68px;color:#e0e8ff}
+nav{position:sticky;top:0;z-index:10;background:white;box-shadow:0 4px 18px #18285c12}.nav{display:flex;gap:19px;overflow:auto;white-space:nowrap;padding:12px 0}.nav a{font-size:14px;font-weight:bold;color:#34405e}.nav a:hover{color:var(--blue)}
+main{padding:22px 0 45px}.hero{border-radius:25px;padding:30px 20px;text-align:center;color:white;background:linear-gradient(120deg,#2434a5,#713df4);box-shadow:0 12px 30px #3924a72b}.hero h2{font-size:clamp(25px,5vw,36px);margin:0 0 8px}.hero p{max-width:700px;margin:0 auto 18px;color:#edf0ff}.btn{display:inline-flex;justify-content:center;align-items:center;border:0;border-radius:11px;background:var(--blue);color:white;padding:11px 16px;font-weight:bold;cursor:pointer}.btn.white{background:white;color:#3924a7}.btn.green{background:var(--green)}.btn.soft{background:#eaf0ff;color:#2349b8}.btn.disabled{background:#aab2c5;cursor:not-allowed}
+.section{margin-top:30px}.heading{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:14px}.heading h2,.section>h2{font-size:23px;margin:0}.muted{color:var(--muted);font-size:14px;margin:3px 0 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.card{background:white;border:1px solid var(--line);border-radius:17px;padding:17px;box-shadow:0 5px 18px #15265a0a}.card h3{font-size:18px;margin:0}.card p{font-size:14px;color:var(--muted);margin:8px 0 13px}.apphead{display:flex;gap:12px;align-items:center}.ico{width:48px;height:48px;border-radius:14px;background:#edf1ff;display:grid;place-items:center;font-size:24px;flex-shrink:0}.pill{display:inline-block;background:#eef2ff;color:#3151bd;padding:3px 9px;border-radius:30px;font-size:11px;font-weight:bold;margin-top:4px}.card .btn{width:100%}
+.tools{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}.search{flex:1;min-width:180px;padding:12px 14px;border:1px solid #d5dbea;border-radius:11px;font-size:15px}.chips{display:flex;gap:8px;overflow:auto;margin:10px 0 14px}.chip{white-space:nowrap;border:1px solid #d5dbea;background:white;border-radius:30px;padding:8px 13px;color:#34405e;cursor:pointer}.chip.active{background:var(--blue);color:white;border-color:var(--blue)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}.tile{padding:17px;border-radius:17px;color:white;background:linear-gradient(135deg,#315efb,#713df4);min-height:112px}.tile:nth-child(2){background:linear-gradient(135deg,#079b70,#16b88b)}.tile:nth-child(3){background:linear-gradient(135deg,#ec493f,#ff7c40)}.tile:nth-child(4){background:linear-gradient(135deg,#e0a000,#f4c342);color:#342400}.tile b{display:block;font-size:17px}.tile span{font-size:28px}
+.notice{background:#fff8e7;border:1px solid #f2d98e;color:#755400;border-radius:14px;padding:14px;font-size:13px}.steps{padding-left:21px;color:#4d5870}.faq details{background:white;border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin:9px 0}.faq summary{font-weight:bold;cursor:pointer}.faq p{color:var(--muted);font-size:14px;margin-bottom:0}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:13px}.contact .card{min-height:125px}
+footer{background:#0b123d;color:#dce4ff;text-align:center;padding:25px 12px;font-size:13px}footer a{color:white;text-decoration:underline}.footlinks{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:10px 0}
+[hidden]{display:none!important}
+@media(max-width:560px){.tagline{margin-left:0}.heading{align-items:start;flex-direction:column}.hero{padding:25px 15px}.nav{gap:15px}}
 </style>
 </head>
 <body>
+<div class="top">सही जानकारी • सुरक्षित विकल्प • समझदारी से ऑनलाइन आगे बढ़ें</div>
+<header><div class="wrap">
+  <div class="brand"><div class="logo">MH</div><h1>Mahendra Earning Hub</h1></div>
+  <p class="tagline">Earn • Learn • Grow 🚀 | Earning Apps & Games in One Place</p>
+</div></header>
+<nav><div class="wrap nav">
+<a href="#home">होम</a><a href="#earning">Earning Apps</a><a href="#games">Games</a><a href="#tasks">Tasks</a><a href="#refer">Refer & Earn</a><a href="#wallet">Wallet / Withdraw</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+</div></nav>
+<main class="wrap">
+<section class="hero" id="home">
+<h2>स्वागत है Mahendra Earning Hub में! 👑</h2>
+<p>यहाँ Earning Apps, Games, Online Tasks और Referral Programs की जानकारी एक ही जगह मिलेगी। किसी भी ऐप को इस्तेमाल करने से पहले उसकी आधिकारिक शर्तें जरूर पढ़ें।</p>
+<a class="btn white" href="#earning">Earning Apps देखें</a>
+</section>
 
-<header>
-<h1>Mahendra Earning Hub</h1>
-<p>ऑनलाइन कमाई सीखें, आगे बढ़ें</p>
-</header>
-
-<div class="container">
-
-<div class="box">
-<h2>हमारी वेबसाइट पर आपका स्वागत है</h2>
-<p>यहाँ आप Affiliate Marketing, Online Business और डिजिटल कमाई के तरीके सीख सकते हैं।</p>
+<section class="section">
+<div class="tiles">
+<a class="tile" href="#earning"><span>💰</span><b>Earning Apps</b><small>ऐप की जानकारी</small></a>
+<a class="tile" href="#tasks"><span>📝</span><b>Online Tasks</b><small>काम और टास्क</small></a>
+<a class="tile" href="#games"><span>🎮</span><b>Games</b><small>गेमिंग लिंक</small></a>
+<a class="tile" href="#refer"><span>🤝</span><b>Refer & Earn</b><small>रेफरल जानकारी</small></a>
 </div>
+</section>
 
-<div class="box">
-<h2>Affiliate Marketing</h2>
-<p>बिना अपना सामान खरीदे दूसरे लोगों के प्रोडक्ट प्रमोट करके कमीशन कमाना सीखें।</p>
-<a class="btn" href="#affiliate">और जानें</a>
+<section class="section" id="earning">
+<div class="heading"><div><h2>🔥 Earning Apps</h2><p class="muted">ऐप का नाम खोजें और कैटेगरी के अनुसार देखें।</p></div></div>
+<div class="tools"><input class="search" id="appSearch" type="search" placeholder="Earning app खोजें..." aria-label="Earning app खोजें"></div>
+<div class="chips" id="appChips">
+<button class="chip active" data-filter="all">सभी</button><button class="chip" data-filter="Refer & Earn">Refer & Earn</button><button class="chip" data-filter="Tasks">Tasks</button><button class="chip" data-filter="Cashback">Cashback</button><button class="chip" data-filter="Rewards">Rewards</button>
 </div>
+<div class="grid" id="appGrid">
+<article class="card searchable" data-category="Refer & Earn" data-name="अपना ऐप जोड़ें"><div class="apphead"><div class="ico">🤝</div><div><h3>अपना ऐप जोड़ें</h3><span class="pill">Refer & Earn</span></div></div><p>यहाँ ऐप का सही नाम, बोनस की शर्तें और अपना referral link जोड़ें।</p><span class="btn disabled">लिंक मिलने पर उपलब्ध होगा</span></article>
+<article class="card searchable" data-category="Tasks" data-name="ऑनलाइन टास्क ऐप"><div class="apphead"><div class="ico">📝</div><div><h3>ऑनलाइन टास्क ऐप</h3><span class="pill">Tasks</span></div></div><p>टास्क, पात्रता, भुगतान और निकासी की शर्तों की जानकारी यहाँ जोड़ें।</p><span class="btn disabled">लिंक मिलने पर उपलब्ध होगा</span></article>
+<article class="card searchable" data-category="Cashback" data-name="कैशबैक ऐप"><div class="apphead"><div class="ico">🛍️</div><div><h3>कैशबैक ऐप</h3><span class="pill">Cashback</span></div></div><p>ऑफर, कैशबैक की सीमा और नियमों की जानकारी यहाँ जोड़ें।</p><span class="btn disabled">लिंक मिलने पर उपलब्ध होगा</span></article>
+<article class="card searchable" data-category="Rewards" data-name="रिवॉर्ड ऐप"><div class="apphead"><div class="ico">🎁</div><div><h3>रिवॉर्ड ऐप</h3><span class="pill">Rewards</span></div></div><p>रिवॉर्ड कैसे मिलते हैं और कैसे redeem करें, यह लिखें।</p><span class="btn disabled">लिंक मिलने पर उपलब्ध होगा</span></article>
+</div><p id="appEmpty" class="muted" hidden>कोई ऐप नहीं मिला। दूसरा नाम खोजें।</p>
+</section>
 
-<div class="box" id="affiliate">
-<h2>Online Earning</h2>
-<p>मोबाइल से ऑनलाइन काम करना सीखें।</p>
+<section class="section" id="games">
+<div class="heading"><div><h2>🎮 Games & APK Links</h2><p class="muted">केवल आधिकारिक या भरोसेमंद स्रोतों के लिंक जोड़ें।</p></div></div>
+<div class="grid">
+<article class="card"><div class="apphead"><div class="ico">🎯</div><div><h3>Game 1</h3><span class="pill">Action / Casual</span></div></div><p>यहाँ गेम का नाम, विवरण और आधिकारिक डाउनलोड लिंक जोड़ें।</p><span class="btn disabled">डाउनलोड लिंक जोड़ना बाकी</span></article>
+<article class="card"><div class="apphead"><div class="ico">🏎️</div><div><h3>Game 2</h3><span class="pill">Racing</span></div></div><p>गेम की जानकारी और सुरक्षित डाउनलोड लिंक यहाँ जोड़ें।</p><span class="btn disabled">डाउनलोड लिंक जोड़ना बाकी</span></article>
+<article class="card"><div class="apphead"><div class="ico">🧩</div><div><h3>Game 3</h3><span class="pill">Puzzle</span></div></div><p>गेम की जानकारी और आधिकारिक स्रोत यहाँ जोड़ें।</p><span class="btn disabled">डाउनलोड लिंक जोड़ना बाकी</span></article>
 </div>
+</section>
 
-<div class="box">
-<h2>हमारे बारे में</h2>
-<p>Mahendra Earning Hub का उद्देश्य लोगों को ऑनलाइन बिजनेस और डिजिटल कमाई की जानकारी देना है।</p>
+<section class="section" id="tasks"><h2>📝 Online Tasks</h2>
+<div class="card"><p>इस सेक्शन में उपलब्ध ऑनलाइन टास्क, उन्हें पूरा करने के चरण, पात्रता और भुगतान की शर्तें प्रकाशित करें।</p>
+<ol class="steps"><li>टास्क देने वाली सेवा की आधिकारिक जानकारी पढ़ें।</li><li>समय, मेहनत और पात्रता समझें।</li><li>किसी भी टास्क के लिए अनजान व्यक्ति को अग्रिम फीस न दें।</li><li>काम पूरा होने और भुगतान की शर्तों का रिकॉर्ड रखें।</li></ol></div>
+</section>
+
+<section class="section" id="refer"><h2>🤝 Refer & Earn</h2>
+<div class="card"><p>अपने referral program का नाम, मिलने वाले reward की शर्तें और व्यक्तिगत referral link यहाँ दिखाएँ। इनाम तभी मिल सकता है जब सेवा की सभी शर्तें पूरी हों।</p><span class="btn disabled">आपका Referral Link बाद में जोड़ा जाएगा</span></div>
+</section>
+
+<section class="section" id="wallet"><h2>👛 Wallet & Withdraw जानकारी</h2>
+<div class="grid">
+<div class="card"><div class="ico">👛</div><h3>Wallet</h3><p>यह वेबसाइट अभी कोई वास्तविक balance या कमाई जमा नहीं करती। ऐप के अंदर दिखने वाला balance उसी ऐप द्वारा नियंत्रित होता है।</p></div>
+<div class="card"><div class="ico">🏦</div><h3>Withdraw</h3><p>निकासी की न्यूनतम सीमा, समय, शुल्क और भुगतान के तरीके संबंधित ऐप की आधिकारिक शर्तों से जाँचें।</p></div>
 </div>
+</section>
 
+<section class="section" id="guide"><h2>🚀 कैसे शुरू करें?</h2><div class="card"><ol class="steps"><li>ऐप की आधिकारिक वेबसाइट या Play Store पेज खोलें।</li><li>रेटिंग, रिव्यू, नियम और Privacy Policy पढ़ें।</li><li>OTP, UPI PIN, पासवर्ड या बैंक PIN किसी के साथ साझा न करें।</li><li>“गारंटीड कमाई” या पहले पैसे जमा करने की मांग से सावधान रहें।</li></ol></div></section>
+
+<section class="section faq" id="faq"><h2>❓ अक्सर पूछे जाने वाले सवाल</h2>
+<details><summary>क्या इस वेबसाइट से पक्की कमाई होगी?</summary><p>नहीं। यह जानकारी देने वाली वेबसाइट है। किसी ऐप या सेवा से कमाई की कोई गारंटी नहीं है।</p></details>
+<details><summary>क्या ऐप में पैसे जमा करना जरूरी है?</summary><p>किसी अनजान ऐप या व्यक्ति को पैसे न भेजें। पहले सेवा की वैधता और शर्तों की स्वतंत्र जाँच करें।</p></details>
+<details><summary>Referral link कैसे काम करता है?</summary><p>कुछ सेवाएँ अपने नियमों के अनुसार referral reward देती हैं। पात्रता और reward की शर्तें हर सेवा में अलग हो सकती हैं।</p></details>
+<details><summary>क्या यहाँ Wallet से पैसे निकाल सकते हैं?</summary><p>नहीं। इस वेबसाइट में वास्तविक wallet या payment सुविधा नहीं है। निकासी संबंधित ऐप के भीतर ही होती है।</p></details>
+</section>
+
+<section class="section" id="contact"><h2>📩 Contact Us</h2><p class="muted">लिंक अपडेट, सुझाव या शिकायत के लिए संपर्क करें। नीचे अपनी सही जानकारी जोड़ें।</p>
+<div class="contact">
+<div class="card"><div class="ico">✉️</div><h3>Email</h3><p>अपना ईमेल पता जोड़ने के बाद यह बटन सक्रिय करें।</p><span class="btn disabled">ईमेल जोड़ना बाकी</span></div>
+<div class="card"><div class="ico">💬</div><h3>WhatsApp / Telegram</h3><p>अपना सही WhatsApp या Telegram लिंक जोड़ें।</p><span class="btn disabled">सोशल लिंक जोड़ना बाकी</span></div>
 </div>
+</section>
 
-<footer>
-<p>© 2026 Mahendra Earning Hub</p>
-<p>सही जानकारी सीखें और आगे बढ़ें।</p>
-</footer>
+<section class="section" id="privacy"><h2>🔒 Privacy Policy</h2><div class="card"><p>यह वेबसाइट अभी सीधे कोई खाता, भुगतान या निजी जानकारी एकत्र नहीं करती। बाहरी ऐप या वेबसाइट खोलने पर उनकी अपनी Privacy Policy और शर्तें लागू होंगी। किसी भी बाहरी सेवा पर जानकारी देने से पहले उसकी नीति पढ़ें। यदि भविष्य में वेबसाइट पर फॉर्म, लॉगिन, analytics या विज्ञापन जोड़े जाते हैं, तो इस नीति को उनके अनुसार अपडेट करना होगा।</p></div></section>
 
+<section class="section notice"><b>⚠️ Disclaimer / जरूरी सूचना:</b> Mahendra Earning Hub केवल जानकारी और शैक्षणिक उद्देश्य के लिए है। हम किसी ऐप की कमाई, भुगतान, सुरक्षा या उपलब्धता की गारंटी नहीं देते। सभी नाम और लिंक जोड़ने से पहले उनकी आधिकारिकता जाँचें। यदि किसी लिंक से कमीशन या referral benefit मिलता है, तो उपयोगकर्ता को स्पष्ट रूप से बताएँ। किसी भी निवेश या भुगतान से पहले स्वयं जाँच करें।</section>
+</main>
+<footer><b>Mahendra Earning Hub</b><div>Earn • Learn • Grow</div><div class="footlinks"><a href="#privacy">Privacy Policy</a><a href="#contact">Contact</a><a href="#home">Back to top</a></div>© <span id="year"></span> Mahendra Earning Hub</footer>
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+let category="all";
+const search=document.getElementById("appSearch");
+const cards=[...document.querySelectorAll(".searchable")];
+function filterApps(){
+ const q=search.value.trim().toLowerCase();let count=0;
+ cards.forEach(card=>{
+  const matchText=(card.dataset.name+" "+card.innerText).toLowerCase().includes(q);
+  const matchCat=category==="all"||card.dataset.category===category;
+  const show=matchText&&matchCat;card.hidden=!show;if(show)count++;
+ });
+ document.getElementById("appEmpty").hidden=count!==0;
+}
+search.addEventListener("input",filterApps);
+document.querySelectorAll("#appChips .chip").forEach(btn=>btn.addEventListener("click",()=>{
+ document.querySelectorAll("#appChips .chip").forEach(x=>x.classList.remove("active"));
+ btn.classList.add("active");category=btn.dataset.filter;filterApps();
+}));
+</script>
 </body>
 </html>
-
